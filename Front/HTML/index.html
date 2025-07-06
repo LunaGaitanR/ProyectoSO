@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="../Statics/CSS/index.css">
     <link rel="icon" href="../Statics/Imagenes/Linux-Logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <title>Proyecto final</title>
+    <title>Lab OS #4</title>
 </head>
 
 <body>
     <header>
-        <h1>Segmentación paginada</h1>
+        <h1>Laboratorio #4 OS</h1>
     </header>
     <main>
         <div class="ContenedorRow">
@@ -20,7 +20,6 @@
                 <h3>Tabla de procesos</h3>
                 <button class="btn" id="btnEditarProcesos">Editar procesos</button>
                 <button class="btn" id="btnLeerTabla">Leer Tabla</button>
-                
                 <table class="TablaProcesosIterativos">
                     <thead>
                         <tr>
@@ -35,11 +34,11 @@
                     <tbody>
                         <tr>
                             <td>P1</td>
-                            <td>195</td>
-                            <td>123</td>
-                            <td>11</td>
-                            <td>656</td>
-                            <td>1372</td>
+                            <td>19524</td>
+                            <td>12352</td>
+                            <td>1165</td>
+                            <td>65536</td>
+                            <td>131072</td>
                             <td class="sinBorde">
                                 <button class="btn btnActivacionProcesos">
                                     <img src="../Statics/Imagenes/icons8-done-20.png"
@@ -49,9 +48,9 @@
                         </tr>
                         <tr>
                             <td>P2</td>
-                            <td>779</td>
-                            <td>320</td>
-                            <td>41</td>
+                            <td>77539</td>
+                            <td>32680</td>
+                            <td>4100</td>
                             <td>0</td>
                             <td>0</td>
                             <td class="sinBorde">
@@ -63,9 +62,9 @@
                         </tr>
                         <tr>
                             <td>P3</td>
-                            <td>992</td>
-                            <td>245</td>
-                            <td>75</td>
+                            <td>99542</td>
+                            <td>24245</td>
+                            <td>7557</td>
                             <td>0</td>
                             <td>0</td>
                             <td class="sinBorde">
@@ -77,9 +76,9 @@
                         </tr>
                         <tr>
                             <td>P4</td>
-                            <td>1150</td>
-                            <td>1230</td>
-                            <td>11</td>
+                            <td>115000</td>
+                            <td>123470</td>
+                            <td>1123</td>
                             <td>0</td>
                             <td>0</td>
                             <td class="sinBorde">
@@ -91,9 +90,9 @@
                         </tr>
                         <tr>
                             <td>P5</td>
-                            <td>122</td>
-                            <td>12</td>
-                            <td>17</td>
+                            <td>12342</td>
+                            <td>1256</td>
+                            <td>1756</td>
                             <td>0</td>
                             <td>0</td>
                             <td class="sinBorde">
@@ -105,9 +104,9 @@
                         </tr>
                         <tr>
                             <td>P6</td>
-                            <td>520</td>
-                            <td>3200</td>
-                            <td>51</td>
+                            <td>525000</td>
+                            <td>3224000</td>
+                            <td>51000</td>
                             <td>0</td>
                             <td>0</td>
                             <td class="sinBorde">
@@ -119,9 +118,9 @@
                         </tr>
                         <tr>
                             <td>P7</td>
-                            <td>590</td>
-                            <td>970</td>
-                            <td>25</td>
+                            <td>590000</td>
+                            <td>974000</td>
+                            <td>25000</td>
                             <td>0</td>
                             <td>0</td>
                             <td class="sinBorde">
@@ -133,9 +132,9 @@
                         </tr>
                         <tr>
                             <td>P8</td>
-                            <td>349</td>
-                            <td>2150</td>
-                            <td>10</td>
+                            <td>349000</td>
+                            <td>2150000</td>
+                            <td>1000</td>
                             <td>0</td>
                             <td>0</td>
                             <td class="sinBorde">
@@ -154,8 +153,10 @@
                     <thead>
                         <tr>
                             <th>Segmento</th>
-                            <th>Direccion Base</th>
-                            <th>Dirrecion Fin</th>
+                            <th>Página</th>
+                            <th>Marco de Memoria</th>
+                            <th>Dirección Base</th>
+                            <th>Dirección Fin</th>
                             <th>Tamaño (KiB)</th>
                         </tr>
                     </thead>
@@ -163,23 +164,24 @@
 
                     </tbody>
                 </table>
+
             </div>
         </div>
     </main>
     <footer>
         <div class="footer-content">
-            <div class="autor">
+            <!-- <div class="autor">
                 <p>Juan Manuel Castillo</p>
                 <a href="https://github.com/JinBot31"> <img src="../Statics/Imagenes/github.png" alt="GitHub"></a>
-            </div>
+            </div> -->
             <div class="autor">
                 <p>Sebastian Quintero Jaimes</p>
                 <a href="https://github.com/Pillallo13"> <img src="../Statics/Imagenes/github.png" alt="GitHub"></a>
             </div>
-            <div class="autor">
+            <!-- <div class="autor">
                 <p>Luna Gaitan</p>
                 <a href="https://github.com/LunaGaitanR"> <img src="../Statics/Imagenes/github.png" alt="GitHub"></a>
-            </div>
+            </div> -->
         </div>
     </footer>
     <dialog id="TablaProcesos">
@@ -316,8 +318,9 @@
             </table>
         </div>
     </dialog>
-    <script type="module" src="../JS/Front.js"></script>
+    <script type="module" src="../js/front.js"></script>
     <script type="module" src="../../Back/controlador.js"></script>
+    <script type="module" src="../../Back/SegmentacionPaginada.js"></script>
 </body>
 
 </html>
