@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Statics/CSS/index.css">
+    <link rel="icon" href="../Statics/Imagenes/Linux-Logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <title>Proyecto final</title>
+</head>
+
+<body>
+    <header>
+        <h1>Segmentación paginada</h1>
+    </header>
+    <main>
+        <div class="ContenedorRow">
+            <div class="ContenedorItem">
+                <h3>Tabla de procesos</h3>
+                <button class="btn" id="btnEditarProcesos">Editar procesos</button>
+                <button class="btn" id="btnLeerTabla">Leer Tabla</button>
+                
+                <table class="TablaProcesosIterativos">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>.Text</th>
+                            <th>.Data</th>
+                            <th>.Bss</th>
+                            <th>.Stack</th>
+                            <th>.Heap</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>P1</td>
+                            <td>195</td>
+                            <td>123</td>
+                            <td>11</td>
+                            <td>656</td>
+                            <td>1372</td>
+                            <td class="sinBorde">
+                                <button class="btn btnActivacionProcesos">
+                                    <img src="../Statics/Imagenes/icons8-done-20.png"
+                                        alt="Boton de activacion del proceso">
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>P2</td>
+                            <td>779</td>
+                            <td>320</td>
+                            <td>41</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="sinBorde">
+                                <button class="btn btnActivacionProcesos">
+                                    <img src="../Statics/Imagenes/icons8-done-20.png"
+                                        alt="Boton de activacion del proceso">
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>P3</td>
+                            <td>992</td>
+                            <td>245</td>
+                            <td>75</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="sinBorde">
+                                <button class="btn btnActivacionProcesos">
+                                    <img src="../Statics/Imagenes/icons8-done-20.png"
+                                        alt="Boton de activacion del proceso">
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>P4</td>
+                            <td>1150</td>
+                            <td>1230</td>
+                            <td>11</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="sinBorde">
+                                <button class="btn btnActivacionProcesos">
+                                    <img src="../Statics/Imagenes/icons8-done-20.png"
+                                        alt="Boton de activacion del proceso">
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>P5</td>
+                            <td>122</td>
+                            <td>12</td>
+                            <td>17</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="sinBorde">
+                                <button class="btn btnActivacionProcesos">
+                                    <img src="../Statics/Imagenes/icons8-done-20.png"
+                                        alt="Boton de activacion del proceso">
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>P6</td>
+                            <td>520</td>
+                            <td>3200</td>
+                            <td>51</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="sinBorde">
+                                <button class="btn btnActivacionProcesos">
+                                    <img src="../Statics/Imagenes/icons8-done-20.png"
+                                        alt="Boton de activacion del proceso">
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>P7</td>
+                            <td>590</td>
+                            <td>970</td>
+                            <td>25</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="sinBorde">
+                                <button class="btn btnActivacionProcesos">
+                                    <img src="../Statics/Imagenes/icons8-done-20.png"
+                                        alt="Boton de activacion del proceso">
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>P8</td>
+                            <td>349</td>
+                            <td>2150</td>
+                            <td>10</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="sinBorde">
+                                <button class="btn btnActivacionProcesos">
+                                    <img src="../Statics/Imagenes/icons8-done-20.png"
+                                        alt="Boton de activacion del proceso">
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="ContenedorItem">
+                <h3>Tabla de gestion de memoria</h3>
+                <table class="TablaSimulacion" id="TablaSimulacion">
+                    <thead>
+                        <tr>
+                            <th>Segmento</th>
+                            <th>Direccion Base</th>
+                            <th>Dirrecion Fin</th>
+                            <th>Tamaño (KiB)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="autor">
+                <p>Juan Manuel Castillo</p>
+                <a href="https://github.com/JinBot31"> <img src="../Statics/Imagenes/github.png" alt="GitHub"></a>
+            </div>
+            <div class="autor">
+                <p>Sebastian Quintero Jaimes</p>
+                <a href="https://github.com/Pillallo13"> <img src="../Statics/Imagenes/github.png" alt="GitHub"></a>
+            </div>
+            <div class="autor">
+                <p>Luna Gaitan</p>
+                <a href="https://github.com/LunaGaitanR"> <img src="../Statics/Imagenes/github.png" alt="GitHub"></a>
+            </div>
+        </div>
+    </footer>
+    <dialog id="TablaProcesos">
+        <div class="contenedor-Item">
+            <div class="aliniarBotones">
+                <button class="btn" id="btnVolver">Regresar</button>
+                <button class="btn" id="btnAgregarProcesos">Agregar Proceso</button>
+            </div>
+            <table class="TablaProcesosIterativos">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>.text</th>
+                        <th>.Data</th>
+                        <th>.Bss</th>
+                        <th>.Stack</th>
+                        <th>.Heap</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="True">P1</td>
+                        <td contenteditable="True">19524</td>
+                        <td contenteditable="True">12352</td>
+                        <td contenteditable="True">1165</td>
+                        <td contenteditable="True">65536</td>
+                        <td contenteditable="True">131072</td>
+                        <td class="sinBorde">
+                            <button class="btn" id="btnEliminarProceso">
+                                <img src="../Statics/Imagenes/icons8-close-20.png"
+                                    alt="Boton de activacion del proceso">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td contenteditable="True">P2</td>
+                        <td contenteditable="True">77539</td>
+                        <td contenteditable="True">32680</td>
+                        <td contenteditable="True">4100</td>
+                        <td contenteditable="True">0</td>
+                        <td contenteditable="True">0</td>
+                        <td class="sinBorde">
+                            <button class="btn" id="btnEliminarProceso">
+                                <img src="../Statics/Imagenes/icons8-close-20.png"
+                                    alt="Boton de activacion del proceso">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td contenteditable="True">P3</td>
+                        <td contenteditable="True">99542</td>
+                        <td contenteditable="True">24245</td>
+                        <td contenteditable="True">7557</td>
+                        <td contenteditable="True">0</td>
+                        <td contenteditable="True">0</td>
+                        <td class="sinBorde">
+                            <button class="btn" id="btnEliminarProceso">
+                                <img src="../Statics/Imagenes/icons8-close-20.png"
+                                    alt="Boton de activacion del proceso">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td contenteditable="True">P4</td>
+                        <td contenteditable="True">115000</td>
+                        <td contenteditable="True">123470</td>
+                        <td contenteditable="True">1123</td>
+                        <td contenteditable="True">0</td>
+                        <td contenteditable="True">0</td>
+                        <td class="sinBorde">
+                            <button class="btn" id="btnEliminarProceso">
+                                <img src="../Statics/Imagenes/icons8-close-20.png"
+                                    alt="Boton de activacion del proceso">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td contenteditable="True">P5</td>
+                        <td contenteditable="True">12342</td>
+                        <td contenteditable="True">1256</td>
+                        <td contenteditable="True">1756</td>
+                        <td contenteditable="True">0</td>
+                        <td contenteditable="True">0</td>
+                        <td class="sinBorde">
+                            <button class="btn" id="btnEliminarProceso">
+                                <img src="../Statics/Imagenes/icons8-close-20.png"
+                                    alt="Boton de activacion del proceso">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td contenteditable="True">P6</td>
+                        <td contenteditable="True">525000</td>
+                        <td contenteditable="True">3224000</td>
+                        <td contenteditable="True">51000</td>
+                        <td contenteditable="True">0</td>
+                        <td contenteditable="True">0</td>
+                        <td class="sinBorde">
+                            <button class="btn" id="btnEliminarProceso">
+                                <img src="../Statics/Imagenes/icons8-close-20.png"
+                                    alt="Boton de activacion del proceso">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td contenteditable="True">P7</td>
+                        <td contenteditable="True">590000</td>
+                        <td contenteditable="True">974000</td>
+                        <td contenteditable="True">25000</td>
+                        <td contenteditable="True">0</td>
+                        <td contenteditable="True">0</td>
+                        <td class="sinBorde">
+                            <button class="btn" id="btnEliminarProceso">
+                                <img src="../Statics/Imagenes/icons8-close-20.png"
+                                    alt="Boton de activacion del proceso">
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td contenteditable="True">P8</td>
+                        <td contenteditable="True">349000</td>
+                        <td contenteditable="True">2150000</td>
+                        <td contenteditable="True">1000</td>
+                        <td contenteditable="True">0</td>
+                        <td contenteditable="True">0</td>
+                        <td class="sinBorde">
+                            <button class="btn" id="btnEliminarProceso">
+                                <img src="../Statics/Imagenes/icons8-close-20.png"
+                                    alt="Boton de activacion del proceso">
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </dialog>
+    <script type="module" src="../JS/Front.js"></script>
+    <script type="module" src="../../Back/controlador.js"></script>
+</body>
+
+</html>
