@@ -1,6 +1,66 @@
-import {simularSegmentacionPaginada} from "./SegmentacionPaginada.js";
+import {simularSegmentacionPaginada, configurarMarcosOS, obtenerEstadisticasMemoria} from "./SegmentacionPaginada.js";
 
 const btnLeerTabla = document.getElementById("btnLeerTabla");
+const btnEstadisticas = document.getElementById("btnEstadisticas");
+const btnOcultarEstadisticas = document.getElementById("btnOcultarEstadisticas");
+
+// Función para configurar marcos del SO (opcional)
+function configurarSO(numMarcos = 5) {
+	configurarMarcosOS(numMarcos);
+	console.log(`SO configurado con ${numMarcos} marcos`);
+}
+
+// Función para mostrar estadísticas de memoria
+function mostrarEstadisticas() {
+	const stats = obtenerEstadisticasMemoria();
+	const container = document.getElementById("estadisticas-container");
+	const content = document.getElementById("estadisticas-content");
+	
+	if (!container || !content) return;
+	
+	// Limpiar contenido anterior
+	content.innerHTML = "";
+	
+	// Crear estadísticas para cada proceso
+	Object.entries(stats).forEach(([proceso, datos]) => {
+		const item = document.createElement("div");
+		item.className = "estadistica-item";
+		
+		const colorProceso = proceso === "SO" ? "#ffeb3b" : "#4caf50";
+		
+		item.innerHTML = `
+			<div class="estadistica-header">
+				<span class="estadistica-proceso" style="color: ${proceso === "SO" ? "#f57f17" : "#2e7d32"}">
+					${proceso === "SO" ? "🖥️ " : "⚙️ "}${proceso}
+				</span>
+				<span class="estadistica-memoria">${datos.memoriaKiB} KiB</span>
+			</div>
+			<div class="estadistica-detalles">
+				<div class="estadistica-marcos">
+					<strong>Marcos:</strong> ${datos.marcos}
+				</div>
+				<div class="estadistica-segmentos">
+					<strong>Segmentos:</strong>
+					${datos.segmentos.map(seg => `<span class="segmento-tag">${seg}</span>`).join("")}
+				</div>
+			</div>
+		`;
+		
+		content.appendChild(item);
+	});
+	
+	// Mostrar el contenedor
+	container.style.display = "block";
+	
+	// Hacer scroll suave hacia las estadísticas
+	container.scrollIntoView({ behavior: "smooth", block: "nearest" });
+	
+	return stats;
+}
+
+// Hacer las funciones disponibles globalmente
+window.configurarSO = configurarSO;
+window.mostrarEstadisticas = mostrarEstadisticas;
 
 btnLeerTabla.addEventListener("click", leerTablaProcesos);
 document.addEventListener("click", (event) => {
@@ -28,4 +88,23 @@ function leerTablaProcesos() {
 	});
 
 	simularSegmentacionPaginada(datos);
+	
+	// Si las estadísticas están visibles, actualizarlas automáticamente
+	const estadisticasContainer = document.getElementById("estadisticas-container");
+	if (estadisticasContainer && estadisticasContainer.style.display !== "none") {
+		mostrarEstadisticas();
+	}
 }
+
+// Event listener para el botón de estadísticas
+btnEstadisticas.addEventListener("click", () => {
+	mostrarEstadisticas();
+});
+
+// Event listener para el botón de ocultar estadísticas
+btnOcultarEstadisticas.addEventListener("click", () => {
+	const container = document.getElementById("estadisticas-container");
+	if (container) {
+		container.style.display = "none";
+	}
+});
