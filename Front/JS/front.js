@@ -96,4 +96,3 @@ function actualizarTablaPrincipalDesdeDialog() {
 		tablaPrincipal.appendChild(filaNueva);
 	});
 }
-
