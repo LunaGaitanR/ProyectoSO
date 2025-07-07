@@ -20,6 +20,7 @@
                 <h3>Tabla de procesos</h3>
                 <button class="btn" id="btnEditarProcesos">Editar procesos</button>
                 <button class="btn" id="btnLeerTabla">Leer Tabla</button>
+                <button class="btn" id="btnEstadisticas">Ver Estadísticas</button>
                 <table class="TablaProcesosIterativos">
                     <thead>
                         <tr>
@@ -146,9 +147,47 @@
                         </tr>
                     </tbody>
                 </table>
+                
+                <!-- Sección de estadísticas -->
+                <div id="estadisticas-container" style="display: none; margin-top: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <h4>Estadísticas de Memoria</h4>
+                        <button class="btn btn-small" id="btnOcultarEstadisticas">Ocultar</button>
+                    </div>
+                    <div id="estadisticas-content">
+                        <!-- Las estadísticas se generarán aquí -->
+                    </div>
+                </div>
             </div>
             <div class="ContenedorItem">
-                <h3>Tabla de gestion de memoria</h3>
+                <h3>Visualización de Memoria</h3>
+                <div class="memoria-visual-container">
+                    <div class="memoria-info">
+                        <div class="memoria-stats">
+                            <span id="memoria-usada">Memoria Usada: 0 KiB</span>
+                            <span id="memoria-disponible">Disponible: 16384 KiB</span>
+                        </div>
+                        <div class="memoria-leyenda">
+                            <div class="leyenda-item">
+                                <div class="color-box so-color"></div>
+                                <span>Sistema Operativo</span>
+                            </div>
+                            <div class="leyenda-item">
+                                <div class="color-box proceso-color"></div>
+                                <span>Procesos de Usuario</span>
+                            </div>
+                            <div class="leyenda-item">
+                                <div class="color-box libre-color"></div>
+                                <span>Memoria Libre</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="memoria-visual" id="memoriaVisual">
+                        <!-- Los marcos de memoria se generarán aquí -->
+                    </div>
+                </div>
+                
+                <h3 style="margin-top: 20px;">Tabla de gestión de memoria</h3>
                 <table class="TablaSimulacion" id="TablaSimulacion">
                     <thead>
                         <tr>
@@ -164,16 +203,15 @@
 
                     </tbody>
                 </table>
-
             </div>
         </div>
     </main>
     <footer>
         <div class="footer-content">
-            <!-- <div class="autor">
+             <div class="autor">
                 <p>Juan Manuel Castillo</p>
                 <a href="https://github.com/JinBot31"> <img src="../Statics/Imagenes/github.png" alt="GitHub"></a>
-            </div> -->
+            </div>
             <div class="autor">
                 <p>Sebastian Quintero Jaimes</p>
                 <a href="https://github.com/Pillallo13"> <img src="../Statics/Imagenes/github.png" alt="GitHub"></a>
